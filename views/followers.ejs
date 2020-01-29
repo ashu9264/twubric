@@ -1,0 +1,37 @@
+	<!doctype html>
+	<html lang="en">
+  	<head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Tuwbric App</title>
+	<body>
+	<div class="container">
+	<h2>Followers list</h2>
+	  <table class="table table-bordered">
+	    <thead>
+	      <tr>
+	        <th>ID</th>
+	        <th>Name</th>
+	        <th>Location</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <% for(var i=0; i < followers.length; i++) { %>
+			   <tr>
+			   	<!-- <td>/app/followers/<%= followers[i].id %>/twubric.json</td> -->
+			   	
+			     <td><a href="/app/followers/<%= followers[i].id %>/twubric.json"><%= followers[i].id %></a></td>
+			     <td><%= followers[i].name %></td>
+			     <td><%= followers[i].location %></td>
+			   </tr>
+			<% } %>
+	      
+	    </tbody>
+	  </table>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+ 	<script src="../js/bootstrap.min.js" ></script>
+ 
+	</body>
+	</html>
