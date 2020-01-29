@@ -16,11 +16,20 @@ module.exports=function(app,express,passport){
   var api=express.Router();
 
 /*landing page api*/
+  
+  api.get('/',async function(req,res){
+    try {
+     return res.redirect('/app')
+    }catch (err) {
+         res.send(JSON.stringify({'message':'something went wrong'}, null, 4));
+    }
+  })
+
   api.get('/app',async function(req,res){
     try {
   	res.render('index');
     }catch (err) {
-         res.header("Content-Type",'application/json');
+
          res.send(JSON.stringify({'message':'something went wrong'}, null, 4));
     }
   })
