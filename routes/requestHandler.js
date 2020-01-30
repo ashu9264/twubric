@@ -87,6 +87,12 @@ module.exports=function(app,express,passport){
 
   })
 
+  api.get('/app/logout', isLoggedIn, function(req, res){
+    req.logout();
+    res.redirect('/app');
+
+  });
+
   return api;
 
 
